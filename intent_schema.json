@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "query",
+          "type": "AMAZON.LITERAL"
+        }
+      ],
+      "intent": "callSusiApi"
+    }
+  ]
+}
