@@ -1,0 +1,16 @@
+{
+  "name": "susi_alexa_skill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Manveer Singh<singhmanveer1995@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "http": "0.0.0"
+  }
+}

@@ -41,53 +41,18 @@ Let's click next now.
 
 We will be shifted to the configuration tab.
 
-We will be making a lambda function, which will hold the code for our Susi skill, further we need to link that code to this skill. 
-To do the linking we need to get the Amazon resource name i.e. ARN and fill it in the field named endpoint. 
+We will host a server on Heroku, which will hold the code for our Susi skill, further we also need to link that code to this skill. 
+To do this linking we need the name of the Heroku url. 
 
-<img src="./docs/images/alexaskill3.PNG" alt="alt text">
+Host a Heroku app, for the code present in [src folder](./src).
 
-To get the amazon resource name, in a new tab, visit [here](https://console.aws.amazon.com). Visit "Lambda" followed by get started button.
-Click on "Create a lambda function":
-
-<img src="./docs/images/awsLambda.PNG" alt="alt text">
-
-We need to select a blueprint for our lambda function. Select the "blank function" option for that.
-
-<img src="./docs/images/blankFunctionBlueprint.PNG" alt="alt text">
-
-Click next. 
-
-For configure triggers option, click this box and select "Alexa skills kit" option. 
-
-<img src="./docs/images/configureAlexaSkills.PNG" alt="alt text">
-
-Click next.
-
-In configure function tab, just write the name of the function and its description. Paste the code present in lambda_function.js file, into the space given below "lambda function code".
-In lambda function handler and role, Click the field named role and select "create a custom role" from the dropdown shown. 
-
-<img src="./docs/images/alexaRole.PNG" alt="alt text">
-
-You will be redirected to a new page. Select the IAM role as lambda_basic_execution:
-
-<img src="./docs/images/basicExecution.PNG" alt="alt text">
-
-Click allow button in the bottom right. We will be redirected back to our previous page.
-We don't need to worry about other settings on this page.
-
-Click next.
-
-Again cross-check the details shown and click next.
-
-Now we will have our ARN(Amazon resource name) on the top right of the page. 
-
-<img src="./docs/images/alexaArn.PNG" alt="alt text">
-
-Copy that and paste it into the field "endpoint" on our previously open, browser tab.
+Please select https option and copy that Heroku app's name and paste it into the field below region radio buttons.
 
 <img src="./docs/images/alexaskill3.PNG" alt="alt text">
 
 Click next.
+
+For SSL certificate, please select "My development endpoint is a sub-domain of a domain that has a wildcard certificate from a certificate authority" as we are using Heroku.
 
 DONE!
 
