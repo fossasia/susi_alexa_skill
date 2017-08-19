@@ -13,15 +13,15 @@ module.exports = (req, res) => {
     }
 
     let say = (text, shouldEndSession) => {
-        let outputSpeech = {};
-        outputSpeech.type = 'PlainText';
-        outputSpeech.text = text;
 
         res.json({
             version: req.version,
             sessionAttributes: session.attributes,
             response: {
-                outputSpeech: outputSpeech,
+                outputSpeech: {
+                    type : "PlainText",
+                    text : text
+                },
                 shouldEndSession: shouldEndSession
             }
         });
@@ -39,8 +39,8 @@ module.exports = (req, res) => {
         session: session,
 
         response: {
-            say: (text,sessionStuff) => say(text, sessionStuff),
-            ask: (text,sessionStuff) => say(text, sessionStuff)
+            say: (text, shouldEndSession) => say(text, shouldEndSession),
+            ask: (text, shouldEndSession) => say(text, shouldEndSession)
         }
 
     };
