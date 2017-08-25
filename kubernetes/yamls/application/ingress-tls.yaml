@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alexa
+  namespace: alexa
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - susi-alexa.tk
+    secretName: susialexa-tls
+  rules:
+  - host: susi-alexa.tk
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: alexa
+          servicePort: 80

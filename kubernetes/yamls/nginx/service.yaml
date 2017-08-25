@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx6
+  namespace: nginx-ingress6
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 'XXX.XX.XX.XX'
+  ports:
+  - port: 80
+    name: http
+  - port: 443
+    name: https
+  selector:
+    app: nginx6

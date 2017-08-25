@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: alexa
+  namespace: alexa
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alexa
+    spec:
+      containers:
+      - name: alexa
+        image: fossasia/susi_alexa_skill:latest-master
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
