@@ -29,22 +29,20 @@ exports.callSusiApi = (slots, session, response) => {
             response1.on("data", (chunk) => { body += chunk; });
             response1.on("end", function(){
                 var data = JSON.parse(body);
-                if(data.answers[0].actions[1]){
-                    if(data.answers[0].actions[1].type === "rss"){
-                        viewCount = "I have no idea about it, sorry.";
+                if(data.answers[0].actions[1] && data.answers[0].actions[1].type === "rss"){
+                    viewCount = "I have no idea about it, sorry.";
+                }
+                else if(data.answers[0].actions[1] && data.answers[0].actions[1].type === "table"){
+                    var colNames = data.answers[0].actions[1].columns;
+                    viewCount = "";
+                    if((data.answers[0].metadata.count)>10){
+                        viewCount += "Due to message limit, only some results are spoke. They are:";
                     }
-                    else if(data.answers[0].actions[1].type === "table"){
-                        var colNames = data.answers[0].actions[1].columns;
-                        viewCount = "";
-                        if((data.answers[0].metadata.count)>10){
-                            viewCount += "Due to message limit, only some results are spoke. They are:";
-                        }
-                        for(var i=0;i<(((data.answers[0].metadata.count)>10)?10:data.answers[0].metadata.count);i++){
-                            viewCount += data.answers[0].data[i].name+",";
-                        }
+                    for(var i=0;i<(((data.answers[0].metadata.count)>10)?10:data.answers[0].metadata.count);i++){
+                        viewCount += data.answers[0].data[i].name+",";
                     }
                 }
-                else
+                else if(!data.answers[0].actions[1])
                 {
                     viewCount = data.answers[0].actions[0].expression;
                 }
