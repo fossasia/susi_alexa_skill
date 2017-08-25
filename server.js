@@ -7,7 +7,7 @@ let express = require("express"),
     handlers = require("./handlers"),
     app = express();
 
-app.set("port", (process.env.PORT || 5000));
+app.set("port", (process.env.PORT || 8080));
 app.use(bodyParser.json());
 
 app.post("/susiapi", (req, res) => {
