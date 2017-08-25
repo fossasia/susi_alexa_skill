@@ -33,7 +33,7 @@ docker build --build-arg COMMIT_HASH=$TRAVIS_COMMIT --build-arg BRANCH=$DEPLOY_B
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 docker tag fossasia/susi_alexa_skill:$TRAVIS_COMMIT fossasia/susi_alexa_skill:latest-$DEPLOY_BRANCH
 echo ">>> Pushing docker image"
-docker push fossasia/susi_fbbot
+docker push fossasia/susi_alexa_skill
 echo ">>> Updating deployment"
 kubectl set image deployment/alexa --namespace=alexa alexa=fossasia/susi_alexa_skill:$TRAVIS_COMMIT
 rm -rf $GOOGLE_APPLICATION_CREDENTIALS
