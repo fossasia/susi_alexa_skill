@@ -44,7 +44,9 @@ We will be shifted to the configuration tab.
 We will host a server on Heroku, which will hold the code for our Susi skill, further we also need to link that code to this skill. 
 To do this linking we need the name of the Heroku url. 
 
-Host a Heroku app, for the code present in [src folder](./src).
+Fork this repository.
+
+Host a [Heroku app](https://dashboard.heroku.com/new-app) and connect the fork of this repository to it.
 
 Please select https option and copy that Heroku app's name and paste it into the field below region radio buttons.
 
