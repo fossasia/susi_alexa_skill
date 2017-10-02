@@ -46,11 +46,36 @@ To do this linking we need the name of the Heroku url.
 
 Fork this repository.
 
-Host a [Heroku app](https://dashboard.heroku.com/new-app) and connect the fork of this repository to it.
+## Host a Heroku App
+
+Make sure you have a [heroku account](https://signup.heroku.com), you can go here to sign up. The following is taken from the [official instructions](https://devcenter.heroku.com/articles/git)
+
+Login to heroku, you will be asked for your username and password.
+
+```shell
+heroku login
+```
+
+Create a new app, this will create a new app and give it a unique name. The output of this will be the url you can use to connect to the API ```https://<heroku-name>.herokuapp.com/```  This will be used later for configuration of the app.
+
+```shell
+heroku create
+
+```
+
+Then push the code to heroku to deploy
+
+```shell
+git push heroku master
+```
+
+Back to the AWS
 
 Please select https option and copy that Heroku app's name and paste it into the field below region radio buttons.
 
+```html
 <img src="./docs/images/alexaskill3.PNG" alt="alt text">
+```
 
 Click next.
 
