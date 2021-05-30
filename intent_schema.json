@@ -4,7 +4,7 @@
       "slots": [
         {
           "name": "query",
-          "type": "AMAZON.LITERAL"
+          "type": "AMAZON.SearchQuery"
         }
       ],
       "intent": "callSusiApi"
